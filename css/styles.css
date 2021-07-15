@@ -13,6 +13,8 @@
 /* колір бекдропа rgba(0, 0, 0, 0.2); */
 /* колір рамки кнопки  rgba(0, 0, 0, 0.1); */
 /* колір фону оверлей rgba(33, 150, 243, 0.9); */
+/* колір рамки інпутів rgba(33, 33, 33, 0.2); */
+/* колір плейсхолдера rgba(117, 117, 117, 0.5); */
 
 html {
     box-sizing: border-box;
@@ -36,6 +38,8 @@ html {
     --bg-modal: rgba(0, 0, 0, 0.2);
     --border-modal-color: rgba(0, 0, 0, 0.1);
     --bg-overlay: rgba(33, 150, 243, 0.9);
+    --border-input-color: rgba(33, 33, 33, 0.2);
+    --placeholder-color: rgba(117, 117, 117, 0.5);
 }
 
 body  {
@@ -574,6 +578,33 @@ height: 70px;
 background-color: var(--accent);
 }
 
+/* ФОРМА */
+
+.button-join {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 200px;
+    height: 50px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: var(--accent);
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    color: var(--primary-white-color);
+}
+
+.icon-join {
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-white-color);
+}
+
 /* МОДАЛЬНЕ ВІКНО */
 .backdrop {
     position: fixed;
@@ -600,9 +631,9 @@ background-color: var(--accent);
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 40px;
 
     width: 528px;
-    height: 581px;
     background-color: var(--primary-white-color);
 
     transform: translate(-50%, -50%) scale(1);
@@ -626,6 +657,174 @@ background-color: var(--accent);
 
 .close-modal::after {
     content: '\2716';
+    color: var(--black-color);
+}
+
+
+
+.modal-title {
+    margin-bottom: 12px;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--primary-text-color);
+}
+
+.form {
+    width: 448px;
+}
+
+.form-field {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    display: inline-block;
+    margin-bottom: 4px;  
+    color: var(--secondary-text-color);
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+}
+
+.form-input {
+    
+    margin: 0;
+    padding: 11px 42px;
+    width: 100%;
+    height: 40px;
+   
+    border: 1px solid var(--border-input-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+.form-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+
+    fill: var(--primary-text-color);
+}
+
+.form-field:focus-within > .form-input {
+    border-color: var(--accent); 
+}
+
+.form-field:focus-within > .form-icon {
+    fill: var(--accent);
+}
+
+.form-comment {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+    resize: none;
+    outline: none;
+
+    border: 1px solid var(--border-input-color);
+    border-radius: 4px;
+
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+}
+
+.form-comment::placeholder {
+    
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+
+    color: var(--placeholder-color);
+}
+
+.form-field:focus-within > .form-comment {
+    border-color: var(--accent); 
+}
+
+.checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-icon {
+    display: inline-block;
+    margin-right: 7px;
+    width: 16px;
+    height: 15px;
+    border-radius: 2px;
+    border: 2px solid var(--primary-text-color);
+}
+
+.checkbox:checked + .checkbox-icon {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    background-image: url(../img/icon-check.svg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-origin: border-box;
+    background-size: contain;
+
+}
+
+.checkbox:focus + .checkbox-icon,
+.checkbox:active + .checkbox-icon {
+    border-color: var(--accent);
+}
+
+.checkbox-text {
+    display: inline-block;
+    
+    line-height: 1.71;
+    color: var(--secondary-text-color);
+}
+
+.checkbox-text a {
+    font-style: inherit;
+    line-height: 1.71;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+    text-decoration-line: underline;
+}
+
+.modal-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    margin-top: 30px;
+    
+    width: 200px;
+    height: 50px;
+    
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    color: var(--primary-white-color);
+    background-color: var(--accent);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: transparent;
 }
 
 /* -------- PORTFOLIO --------- */

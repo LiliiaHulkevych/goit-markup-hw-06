@@ -365,12 +365,62 @@
           </li>
         </ul>
       </div>
+
+      <h3 class="title-footer">Подпишитесь на рассылку</h3>
+      <form name="join_form">
+          <input type="email" name="email" placeholder="E-mail"/>
+          <button type="submit" class="button-join">Подписаться
+            <svg class="icon-join">
+              <use href="./img/sprite.svg#icon-telegram"></use>
+            </svg>
+          </button>
+      </form>
+
   </div>
   </footer>
 
   <!-- Модальне вікно -->
   <div class="backdrop is-hidden" data-modal>
     <div class="modal">
+      <h3 class="modal-title">Оставьте свои данные, мы вам перезвоним</h3>
+      <form name="modal-form" autocomplete="off">
+        
+        <label class="form-field">
+          <span class="form-label">Имя</span>
+          <input type="text" class="form-input" name="name">
+          <svg class="form-icon">
+            <use href="./img/sprite.svg#icon-person"></use>
+          </svg>
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">Телефон</span>
+          <input type="tel" class="form-input" name="tel">
+          <svg class="form-icon">
+            <use href="./img/sprite.svg#icon-mobile"></use>
+          </svg>
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">Почта</span>
+          <input type="email" class="form-input" name="email">
+          <svg class="form-icon">
+            <use href="./img/sprite.svg#icon-post"></use>
+          </svg>
+        </label>
+        
+        <label class="form-field">
+          <span class="form-label">Комментарий</span>
+          <textarea class="form-comment" name="comment" rows="5" placeholder="Введите текст"></textarea>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" class="checkbox" name="license" value="ok"/>
+          <span class="checkbox-icon"></span>
+          <span class="checkbox-text">Соглашаюсь с рассылкой и принимаю <a href=""> Условия договора</a></span>
+        </label>
+        <button type="submit" class="modal-button">Отправить</button> 
+      </form>
       <button type="button" class="close-modal" data-modal-close> </button>
     </div>
   </div>
