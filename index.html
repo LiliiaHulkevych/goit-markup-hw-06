@@ -366,15 +366,19 @@
         </ul>
       </div>
 
-      <h3 class="title-footer">Подпишитесь на рассылку</h3>
-      <form name="join_form">
-          <input type="email" name="email" placeholder="E-mail"/>
+      <div class="join">
+        <h3 class="title-footer">Подпишитесь на рассылку</h3>
+      <form name="join-form" class="join-form">
+        <div class="join-div">
+          <input type="email" class="input-join" name="email" placeholder="E-mail"/>
           <button type="submit" class="button-join">Подписаться
             <svg class="icon-join">
               <use href="./img/sprite.svg#icon-telegram"></use>
             </svg>
           </button>
+        </div>
       </form>
+      </div>
 
   </div>
   </footer>
@@ -421,7 +425,11 @@
         </label>
         <button type="submit" class="modal-button">Отправить</button> 
       </form>
-      <button type="button" class="close-modal" data-modal-close> </button>
+      <button type="button" class="close-modal" data-modal-close>
+        <svg class="close-icon">
+          <use href="./img/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
     </div>
   </div>
 <script src="./js/modal.js"></script>
